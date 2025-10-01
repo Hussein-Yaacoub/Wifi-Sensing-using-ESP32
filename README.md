@@ -42,22 +42,11 @@ The firmware connects (or monitors) Wi-Fi, enables CSI, extracts **per-frame fea
 Coefficient of variation across subcarriers
 
 $$
-\mathrm{CV_{sc}}=\frac{\sqrt{\operatorname{Var}_k\!\left(|H_k|\right)}}{\mathbb{E}_k\!\left[|H_k|\right]}
+\mathrm{CV}_{\mathrm{sc}}
+=\frac{\sqrt{\mathrm{Var}_k\!\left(|H_k|\right)}}
+       {\mathrm{E}_k\!\left[\,|H_k|\,\right]}
 $$
 
-Spectral flatness (geometric / arithmetic mean)
-
-$$
-\mathrm{SFM}=\frac{\exp\!\left(\tfrac{1}{N}\sum_{k} \ln |H_k|\right)}{\tfrac{1}{N}\sum_{k} |H_k|}
-$$
-
-Amplitude slope in dB vs subcarrier index
-
-$$
-A_k^{\mathrm{dB}}=20\log_{10}|H_k|\;\approx\; m\,k + b
-$$
-
-We report `slope_amp_dB = m`.
 
 ---
 
@@ -82,10 +71,13 @@ We report the mean across subcarriers → `ewvar_mean`.
 **Attenuation vs baseline**
 
 $$
-\Delta A_k=20\log_{10}\!\left(\frac{|H_k|}{|H_{k,0}|}\right),
+\Delta A_k \;=\; 20\log_{10}\!\left(\frac{|H_k|}{|H_{k,0}|}\right),
 \qquad
-\text{feature}=\frac{1}{N}\sum_{k}\Delta A_k \;=\; \texttt{mean\_delta\_dB}.
+\text{feature} \;=\; \frac{1}{N}\sum_{k}\Delta A_k
 $$
+
+We report **`mean_delta_dB`**.
+
 
 ---
 
@@ -104,11 +96,13 @@ Unwrap phase across subcarriers, fit a line vs frequency, and use $\Delta f=312.
 **Residual phase (micro-motion)**
 
 $$
-\tilde{\phi}_k=\phi_k-(\hat{\phi}_0+\hat{s}\,k),
+\tilde{\phi}_k \;=\; \phi_k - \left(\hat{\phi}_0 + \hat{s}\,k\right),
 \qquad
-\text{feature}=\frac{1}{N}\sum_{k}\big|\tilde{\phi}_k\big|
-\;=\; \texttt{mean\_phase\_delta}.
+\text{feature} \;=\; \frac{1}{N}\sum_{k}\big|\tilde{\phi}_k\big|
 $$
+
+We report **`mean_phase_delta`**.
+
 
 ---
 
