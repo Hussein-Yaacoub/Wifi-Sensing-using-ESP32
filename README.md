@@ -125,7 +125,7 @@ Calibrate $A$ (RSSI at 1 m) and $n$ (path-loss exponent).
 2. In `src/main.cpp`, set `WIFI_SSID` / `WIFI_PASSWORD`.  
 3. (Optional) tune: `BASELINE_FRAMES`, `ALPHA`, `RX_REF_dBm`, `PATH_N`, `LOG_DURATION_MS`.  
 4. **Build & Upload**; open Serial @ **115200**.  
-5. After **3 minutes**, a CSV like `/csi_<boot_ms>.csv` is saved to SPIFFS.
+5. For the future Record for **n minutes** , **different poses** and **behind different material**, save the data in CSV file to train ML models using it.
 
 > To download the CSV: use an ESP32 FS plugin/tool or add a small serial dumper.
 
