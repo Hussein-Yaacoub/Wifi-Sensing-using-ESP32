@@ -1,7 +1,7 @@
 # ESP32 Wi-Fi CSI Feature Extractor + CSV Logger (PlatformIO)
 
 Turn an ESP32 into a lightweight **Wi-Fi Channel State Information (CSI)** probe for environment sensing.  
-The firmware connects (or monitors) Wi-Fi, enables CSI, extracts **per-frame features** from subcarrier I/Q, and logs them to **CSV for 3 minutes** on SPIFFS. A safe ISR→queue design keeps the system stable (no heap or printing inside the CSI callback).
+The firmware connects (or monitors) Wi-Fi, enables CSI, extracts **per-frame features** from subcarrier I/Q . A safe ISR→queue design keeps the system stable (no heap or printing inside the CSI callback).
 
 ---
 
